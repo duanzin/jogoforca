@@ -4,4 +4,4 @@ function Chute() {
     
 }
 
-export default Chute 
+export default Chute ;

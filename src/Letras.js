@@ -3,4 +3,4 @@ function Letras() {
     
 }
 
-export default Letras
+export default Letras;
