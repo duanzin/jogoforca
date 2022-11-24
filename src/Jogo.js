@@ -1,21 +1,25 @@
 import react from "react";
 
 function Jogo(props) {
-
-    const [palavra,setpalavra] = react.useState("");
-    function comecar(){
-        setpalavra(props.palavras[Math.floor(Math.random()*props.palavras.length)]);
-        props.setdesativar(false)
-    }
+  const [linha, setlinha] = react.useState([]);
+  const [palavra, setpalavra] = react.useState("");
+  function comecar() {
+    setlinha([]);
+    setpalavra(
+      Array.from(
+        props.palavras[Math.floor(Math.random() * props.palavras.length)]
+      )
+    );
+    palavra.map(() => setlinha((current) => [...current, "_ "]));
+    props.setdesativar(false);
+  }
 
   return (
     <div className="jogo">
       <img src={props.forcas[props.erros]} alt="forca" />
       <div>
-        <button onClick={comecar}>
-          Escolher Palavra
-        </button>
-        <p>{palavra}</p>
+        <button onClick={comecar}>Escolher Palavra</button>
+        <p>{linha}</p>
       </div>
     </div>
   );

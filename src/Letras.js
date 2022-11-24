@@ -1,18 +1,23 @@
 import react from "react";
 
 function Letras(props) {
+  const [ativo, setativo] = react.useState(props.desativar);
 
-    const [ativo, setativo] = react.useState(props.desativar);
-    function clique() {
-        setativo(true);
-      }
-    return (
-      <>
-          <button key={props.letra} onClick={clique} disabled={props.desativar}>
-            {props.letra.toUpperCase()}
-          </button>
-      </>
-    );
+  react.useEffect(() => {
+    setativo(props.desativar);
+  }, [props.desativar]);
+  
+ 
+  function clique() {
+    setativo(true);
+  }
+  return (
+    <>
+      <button onClick={clique} disabled={ativo}>
+        {props.letra.toUpperCase()}
+      </button>
+    </>
+  );
 }
 
 export default Letras;

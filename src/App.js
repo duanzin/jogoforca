@@ -54,7 +54,7 @@ function App() {
       />
       <div className="letras">
       {alfabeto.map((letra) => (
-        <Letras letra={letra} desativar={desativar} seterros={seterros} />
+        <Letras key={letra} letra={letra} desativar={desativar} seterros={seterros} />
       ))}
       </div>
       <Chute desativar={desativar} seterros={seterros} />
