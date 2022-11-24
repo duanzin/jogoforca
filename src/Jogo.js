@@ -31,6 +31,7 @@ function Jogo(props) {
     props.setfim("#27AE60");
     props.setdesativar(true);
   }
+
   return (
     <div className="jogo">
       <img src={props.forcas[props.erros]} alt="forca" />

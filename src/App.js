@@ -81,8 +81,10 @@ function App() {
       </div>
       <Chute
         desativar={desativar}
+        setdesativar={setdesativar}
+        palavra={palavra}
         seterros={seterros}
-        setacertos={setacertos}
+        setfim={setfim}
       />
     </div>
   );
