@@ -6,6 +6,8 @@ function Jogo(props) {
   let randomizar = "";
 
   function comecar() {
+    props.seterros(0);
+    props.setfim("#000000");
     randomizar = props.palavras[Math.floor(Math.random() * props.palavras.length)];
     props.setpalavra(randomizar);
     setesconde(randomizar
@@ -22,14 +24,14 @@ function Jogo(props) {
       .map((letra) => (props.acertos.includes(letra) ? letra : "_"))
       .join(" "));
   }, [props.acertos]);
-  
+
 
   return (
     <div className="jogo">
       <img src={props.forcas[props.erros]} alt="forca" />
       <div>
         <button onClick={comecar}>Escolher Palavra</button>
-        <p>{esconde}</p>
+        <p style={{color:props.fim}}>{esconde}</p>
       </div>
     </div>
   );

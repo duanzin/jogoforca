@@ -46,17 +46,21 @@ function App() {
   const [erros, seterros] = react.useState(0);
   const [acertos, setacertos] = react.useState([]);
   const [palavra, setpalavra] = react.useState("");
+  const [fim, setfim] = react.useState("#000000")
   
   return (
     <div className="App">
       <Jogo
         setdesativar={setdesativar}
         erros={erros}
+        seterros={seterros}
         acertos={acertos}
         forcas={imagens}
         palavras={palavras}
         palavra={palavra}
         setpalavra={setpalavra}
+        fim={fim}
+        setfim={setfim}
       />
       <div className="letras">
         {alfabeto.map((letra) => (
@@ -64,11 +68,13 @@ function App() {
             key={letra}
             letra={letra}
             desativar={desativar}
+            setdesativar={setdesativar}
             erros={erros}
             seterros={seterros}
             palavra={palavra}
             acertos={acertos}
             setacertos={setacertos}
+            setfim={setfim}
           />
         ))}
       </div>

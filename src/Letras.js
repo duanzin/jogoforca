@@ -10,11 +10,17 @@ function Letras(props) {
   function clique() {
     setativo(true);
     if (props.palavra.includes(props.letra)) {
-      console.log("ativou");
       props.setacertos([...props.acertos, props.letra]);
       console.log(props.acertos);
     }
+    else{
+      props.seterros(props.erros + 1);
+    }
     console.log(props.palavra);
+  }
+  if (props.erros === 6) {
+    props.setfim("#FF0000");
+    props.setdesativar(true);
   }
   return (
     <>
