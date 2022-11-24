@@ -11,7 +11,6 @@ function Letras(props) {
     setativo(true);
     if (props.palavra.includes(props.letra)) {
       props.setacertos([...props.acertos, props.letra]);
-      console.log(props.acertos);
     }
     else{
       props.seterros(props.erros + 1);

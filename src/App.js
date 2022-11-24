@@ -55,6 +55,7 @@ function App() {
         erros={erros}
         seterros={seterros}
         acertos={acertos}
+        setacertos={setacertos}
         forcas={imagens}
         palavras={palavras}
         palavra={palavra}
