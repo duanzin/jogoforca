@@ -20,6 +20,9 @@ function Letras(props) {
   if (props.erros === 6) {
     props.setfim("#FF0000");
     props.setdesativar(true);
+    props.setesconde(props.palavra
+      .split("")
+      .join(" "))
   }
   return (
     <>

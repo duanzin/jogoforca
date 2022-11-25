@@ -2,7 +2,6 @@ import react from "react";
 
 
 function Jogo(props) {
-  const [esconde,setesconde] = react.useState("");
   let randomizar = "";
 
   function comecar() {
@@ -11,7 +10,7 @@ function Jogo(props) {
     props.setfim("#000000");
     randomizar = props.palavras[Math.floor(Math.random() * props.palavras.length)];
     props.setpalavra(randomizar);
-    setesconde(randomizar
+    props.setesconde(randomizar
       .split("")
       .map((letra) => (props.acertos.includes(letra) ? letra : "_"))
       .join(" "));
@@ -20,14 +19,13 @@ function Jogo(props) {
   }
 
   react.useEffect(() => {
-    setesconde(props.palavra
+    props.setesconde(props.palavra
       .split("")
       .map((letra) => (props.acertos.includes(letra) ? letra : "_"))
       .join(" "));
-    console.log(esconde);
   }, [props.acertos]);
 
-  if (!esconde.includes("_")) {
+  if (!props.esconde.includes("_")) {
     props.setfim("#27AE60");
     props.setdesativar(true);
   }
@@ -37,7 +35,7 @@ function Jogo(props) {
       <img src={props.forcas[props.erros]} alt="forca" />
       <div>
         <button onClick={comecar}>Escolher Palavra</button>
-        <p style={{color:props.fim}}>{esconde}</p>
+        <p style={{color:props.fim}}>{props.esconde}</p>
       </div>
     </div>
   );

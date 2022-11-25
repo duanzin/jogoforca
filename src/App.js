@@ -46,7 +46,8 @@ function App() {
   const [erros, seterros] = react.useState(0);
   const [acertos, setacertos] = react.useState([]);
   const [palavra, setpalavra] = react.useState("");
-  const [fim, setfim] = react.useState("#000000")
+  const [esconde,setesconde] = react.useState("");
+  const [fim, setfim] = react.useState("#000000");
   
   return (
     <div className="App">
@@ -60,6 +61,8 @@ function App() {
         palavras={palavras}
         palavra={palavra}
         setpalavra={setpalavra}
+        esconde={esconde}
+        setesconde={setesconde}
         fim={fim}
         setfim={setfim}
       />
@@ -75,6 +78,7 @@ function App() {
             palavra={palavra}
             acertos={acertos}
             setacertos={setacertos}
+            setesconde={setesconde}
             setfim={setfim}
           />
         ))}
