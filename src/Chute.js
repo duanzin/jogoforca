@@ -16,6 +16,7 @@ function Chute(props) {
     else{
       props.seterros(6);
     }
+    setinteira("");
     props.setdesativar(true);
   }
 
