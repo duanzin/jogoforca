@@ -34,7 +34,7 @@ function Jogo(props) {
       <img src={props.forcas[props.erros]} alt="forca" data-test="game-image"/>
       <div>
         <button onClick={comecar} data-test="choose-word">Escolher Palavra</button>
-        <p style={{color:props.fim}} data-test="word" data-answer={randomizar}>{props.esconde}</p>
+        <p style={{color:props.fim}} data-test="word" data-answer={props.palavra}>{props.esconde}</p>
       </div>
     </div>
   );
