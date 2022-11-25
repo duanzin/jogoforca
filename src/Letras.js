@@ -26,7 +26,7 @@ function Letras(props) {
   }
   return (
     <>
-      <button onClick={clique} disabled={ativo}>
+      <button onClick={clique} disabled={ativo} data-test="letter">
         {props.letra.toUpperCase()}
       </button>
     </>

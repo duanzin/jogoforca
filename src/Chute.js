@@ -27,8 +27,9 @@ function Chute(props) {
         onChange={mudavalor}
         value={inteira}
         disabled={props.desativar}
+        data-test="guess-input"
       ></input>
-      <button onClick={palavrainteira}>Chutar</button>
+      <button onClick={palavrainteira} data-test="guess-button">Chutar</button>
     </div>
   );
 }

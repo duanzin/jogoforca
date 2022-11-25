@@ -15,7 +15,6 @@ function Jogo(props) {
       .map((letra) => (props.acertos.includes(letra) ? letra : "_"))
       .join(" "));
     props.setdesativar(false);
-    console.log(randomizar);
   }
 
   react.useEffect(() => {
@@ -32,10 +31,10 @@ function Jogo(props) {
 
   return (
     <div className="jogo">
-      <img src={props.forcas[props.erros]} alt="forca" />
+      <img src={props.forcas[props.erros]} alt="forca" data-test="game-image"/>
       <div>
-        <button onClick={comecar}>Escolher Palavra</button>
-        <p style={{color:props.fim}}>{props.esconde}</p>
+        <button onClick={comecar} data-test="choose-word">Escolher Palavra</button>
+        <p style={{color:props.fim}} data-test="word" data-answer={randomizar}>{props.esconde}</p>
       </div>
     </div>
   );
