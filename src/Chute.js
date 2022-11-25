@@ -12,6 +12,9 @@ function Chute(props) {
   function palavrainteira() {
     if (inteira === props.palavra) {
       props.setfim("#27AE60");
+      props.setesconde(props.palavra
+        .split("")
+        .join(" "))
     }
     else{
       props.seterros(6);

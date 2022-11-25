@@ -88,6 +88,7 @@ function App() {
         setdesativar={setdesativar}
         palavra={palavra}
         seterros={seterros}
+        setesconde={setesconde}
         setfim={setfim}
       />
     </div>
